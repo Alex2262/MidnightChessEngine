@@ -57,3 +57,48 @@ struct Score {
 };
 
 typedef Score S;
+
+struct Trace {
+	int score={};
+
+	short material[NPIECE_TYPES][NCOLORS]{};
+
+	short pawn_pst[NSQUARES][NCOLORS]{};
+	short knight_pst[NSQUARES][NCOLORS]{};
+	short bishop_pst[NSQUARES][NCOLORS]{};
+	short rook_pst[NSQUARES][NCOLORS]{};
+	short queen_pst[NSQUARES][NCOLORS]{};
+	short king_pst[NSQUARES][NCOLORS]{};
+
+	short open_files[NPIECE_TYPES][NCOLORS]{};
+	short semi_open_files[NPIECE_TYPES][NCOLORS]{};
+	short pawn_protection[NPIECE_TYPES][NCOLORS]{};
+
+	short king_pawn_shield[2][NCOLORS]{};
+	short passed_pawns[NCOLORS]{};
+	short blocked_passed_pawns[NCOLORS]{};
+	short isolated_pawns[NCOLORS]{};
+	short doubled_pawns[NCOLORS]{};
+	short bishop_bonus[NCOLORS]{};
+
+	short knight_mobility[NCOLORS]{};
+	short bishop_mobility[NCOLORS]{};
+	short rook_mobility[NCOLORS]{};
+	short queen_mobility[NCOLORS]{};
+};
+
+std::ostream& operator<<(std::ostream& os, const Trace& t) {
+	os << "score: " << t.score << std::endl;
+	os << "pawn pst: ";
+	for (int j = 0; j < NCOLORS; j++) {
+		for (int i = 0; i < NSQUARES; i++) os << " " << t.pawn_pst[i][j];
+	}
+	os << std::endl;
+
+	os << "knight pst: ";
+	for (int j = 0; j < NCOLORS; j++) {
+		for (int i = 0; i < NSQUARES; i++) os << " " << t.knight_pst[i][j];
+	}
+	os << std::endl;
+	return os;
+}

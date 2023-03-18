@@ -1,7 +1,6 @@
 #pragma once
 #include "move_generation/types.h"
 #include "types.h"
-
 //
 // Created by Archishmaan Peyyety on 1/10/23.
 //

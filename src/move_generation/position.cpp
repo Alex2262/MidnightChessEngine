@@ -99,10 +99,12 @@ void Position::set(const std::string& fen, Position& p) {
 	std::string half_move_clock = "0";
 	std::string full_move_clock = "1";
 
+	/*
 	if (fen_components.size() > 5) {
 		half_move_clock = fen_components[4];
 		full_move_clock = fen_components[5];
 	}
+	 */
 
 	int square = a8;
 	for (char ch : position) {
