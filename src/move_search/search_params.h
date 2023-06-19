@@ -13,7 +13,7 @@ constexpr double LMR_DIVISOR_QUIET = 1.75;
 
 constexpr int NMP_MIN_DEPTH = 3;
 
-constexpr int LMP_MIN_DEPTH = 3;
+constexpr int LMP_MIN_DEPTH = 4;
 constexpr int LMP_DEPTH_MULTIPLIER = 12;
 
 constexpr int Q_SEARCH_FUTILITY_MARGIN = 60;

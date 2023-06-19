@@ -190,7 +190,7 @@ int pvs(Position &board, short depth, int ply, int alpha, int beta, bool do_null
 
 		if (late_move_prune(pv_node, move_idx, depth, improving)) break;
 		if (futility_prune(static_eval, alpha, value, depth)) break;
-		if (late_move_prune_quiet(pv_node, move_idx, legal_move, depth)) continue;
+		if (late_move_prune_quiet(pv_node, move_idx, legal_move, depth, improving)) continue;
 		if (history_prune<color>(pv_node, value, depth, legal_move)) continue;
 		if (see_prune_pvs<color>(board, pv_node, depth, value, legal_move)) continue;
 
