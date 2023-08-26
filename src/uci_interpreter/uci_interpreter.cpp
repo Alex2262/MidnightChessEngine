@@ -145,6 +145,9 @@ void read_uci() {
 			}
 		} else if (input_line == "hash size") {
 			std::cout << t_table.entry_count() << " entries" << std::endl;
+		} else if (input_line == "eval") {
+			if (board.turn() == WHITE) std::cout << board.evaluate<WHITE>() << std::endl;
+			else std::cout << board.evaluate<BLACK>() << std::endl;
 		}
 	}
 }
